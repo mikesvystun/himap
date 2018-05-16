@@ -1,0 +1,21 @@
+<h1>Add new place</h1>
+
+<%= form_for(@place) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="actions">
+    <%=f.submit %>
+  </div>
+
+<% end %>
+
+<%= link_to 'home', root_path %>
