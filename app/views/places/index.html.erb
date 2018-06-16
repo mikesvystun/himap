@@ -13,7 +13,7 @@
       var o = {}; 
       o['lat']=h[k]['lat']; 
       o['lng']=h[k]['lng']; 
-      setTimeout(addOne, 1000*k, o);
+      setTimeout(addOne, h[k]['founded']*10, o);
     };
   });
 
