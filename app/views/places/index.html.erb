@@ -4,8 +4,11 @@
 
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    handler.map.centerOn({lat: 49, lng: 32});
+
+
+    handler.getMap().setCenter({lat: 49, lng: 32});
     handler.getMap().setZoom(6);
+
 
     var h = <%= raw @hash.to_json %>;
     for (var k in h) { 
