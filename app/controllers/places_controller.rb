@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
       marker.lng place.longitude
       marker.json({founded: place.founded})
     end
+    @bounds = bounds
   end
 
   def new
@@ -23,4 +24,14 @@ class PlacesController < ApplicationController
   def place_params
     params.require(:place).permit(:name, :address)
   end
+
+  def bounds
+    a = {}
+    a["north"] = Place.maximum(:latitude) 
+    a["south"] = Place.minimum(:latitude)
+    a["east"] = Place.maximum(:longitude) 
+    a["west"] = Place.minimum(:longitude)
+    return a
+  end
+
 end
